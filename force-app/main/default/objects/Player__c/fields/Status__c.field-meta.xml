@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(IsBlackList__c = true,	
+			IMAGE(&quot;https://practice131-dev-ed--c.vf.force.com/resource/1664460403000/bandit?&quot;, &quot;bandit&quot;, 25,25),
+			IF(TotalMoneyWon__c &lt; 0, 
+						IMAGE(&quot;https://practice131-dev-ed--c.vf.force.com/resource/1664460686000/warning?&quot;, &quot;warning&quot;, 25,25),
+						IF(TotalMoneyWon__c &gt;= 0 &amp;&amp; TotalMoneyWon__c &lt; 1000,
+									null,
+									IF(TotalMoneyWon__c &gt;= 1000 &amp;&amp; TotalMoneyWon__c &lt; 10000 ,
+												IMAGE(&quot;https://practice131-dev-ed--c.vf.force.com/resource/1664457974000/Star?&quot;, &quot;star&quot;, 25,25),  
+									   IMAGE(&quot;https://practice131-dev-ed--c.vf.force.com/resource/1664458313000/diamond?&quot;, &quot;diamond&quot;, 25,25)
+												)
+			     )
+						)
+			)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
